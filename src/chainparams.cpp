@@ -132,7 +132,7 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xbd;
+        pchMessageStart[0] = 0xdd;
         pchMessageStart[1] = 0x0a;
         pchMessageStart[2] = 0xcf;
         pchMessageStart[3] = 0xbe;
@@ -144,6 +144,8 @@ public:
         
         genesis = CreateGenesisBlock(1533513600, 202693, 0x1e0ffff0, 1, 20 * COIN);
 
+		vSeeds.clear();
+		
         // Bobachain addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,85);
         // Bobachain script addresses start with '5'
@@ -256,9 +258,6 @@ public:
 
         genesis = CreateGenesisBlock(1519336394, 1105519, 0x1e0ffff0, 1, 20 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-
-//        assert(consensus.hashGenesisBlock == uint256S("0x00000ac0100fe889e7130e47d13819cc91eba5646dc1e8fc050c7a67532565ed"));
-//        assert(genesis.hashMerkleRoot == uint256S("0x151883cb75e167308cfe2480d991e4d2c634f74499a5695b61afb3b19f070a5e"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
